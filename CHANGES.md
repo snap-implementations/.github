@@ -59,7 +59,7 @@ git push -u origin my-new-branch
 Check the repository action status and verify that it completes successfully. https://github.com/searchspring-implementations
 
 Verify that the changes fixed the problem by using a branch preview. Navigate to the website where Snap is integrated:  
-`http://www.yoursite.com/collection/things?branch=my-new-branch`
+`http://www.yoursite.com/collection/things?searchspring-preview=my-new-branch`
 
 Once satisfied with the changes, the branch can be merged into `production`. This must be done via a Pull Request in Github. This extra step clearly identifies the incomming changes about to be merged so that any last minute issues can be resolved. Any merge conflicts are immediately identified and can even be resolved within Github. Pull requests also provide a method for requesting a peer review of your work before merging it in.
 
