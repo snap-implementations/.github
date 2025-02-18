@@ -97,15 +97,15 @@ The bundle file is typically placed in a global header file on the site inside o
 ```
 
 ## Branch Overrides
-To preview a branch build, simply add the branch name as a `branch` parameter to the current URL. 
+To preview a branch build, simply add the branch name as a `searchspring-preview` parameter to the current URL. 
 
-For example, if you are on `https://www.sellingthings.com` and you wanted to test the `fix-bug` branch, you would navigate to `https://www.sellingthings.com?branch=fix-bug` after which you would see the branch preview popup showing the details of the preview.
+For example, if you are on `https://www.sellingthings.com` and you wanted to test the `fix-bug` branch, you would navigate to `https://www.sellingthings.com?searchspring-preview=fix-bug` after which you would see the branch preview popup showing the details of the preview.
 
 ![image](https://raw.githubusercontent.com/searchspring/snap/main/images/branch-override.png)
 
 Tag versions will also be uploaded to the CDN alowing usage of these in branch overrides.
 
-For example, if you are on `https://www.sellingthings.com` and you wanted to test the `0.43.0` tag, you would navigate to `https://www.sellingthings.com?branch=0.43.0` which will trigger the load of that build.
+For example, if you are on `https://www.sellingthings.com` and you wanted to test the `0.43.0` tag, you would navigate to `https://www.sellingthings.com?searchspring-preview=0.43.0` which will trigger the load of that build.
 
 ## Local Development
 Typically a site repository would be cloned locally, modified on a new branch (based on `production`), pushed to Github and then merged back into the `production` branch using a pull request.
