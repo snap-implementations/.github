@@ -1,10 +1,8 @@
-# Searchspring Managed Snap Repositories
+# Athos Commerce Managed Snap Repositories
 
-https://github.com/searchspring-implementations
+https://github.com/snap-implementations
 
-Repositories in this organization are supported by Searchspring and are configured to use a Github action to handle the testing, bundling and deploying of the Snap code.
-
-These repositories can also be viewed via the [Snapp Explorer](https://searchspring.github.io/snapp-explorer/).
+Repositories in this organization are supported by Athos and are configured to use a Github action to handle the testing, bundling and deploying of the Snap code.
 
 ## Directory Structure
 Directory structures may vary from project to project, but should generally follow the structure below. 
@@ -77,23 +75,23 @@ Lighthouse testing is run using [Lighthouse CI](https://github.com/GoogleChrome/
 
 A new Github tag will be pushed to the repository during this step. The new tag version is determined firstly by the value of `searchspring.version` in `package.json` and secondly by the existence of tags at that version. If a tag does not yet exist for `searchspring.version` it will be created (eg. `0.43.0`) - if one does exist, the tag version is *revision* incremented (eg. `0.43.0-1`).
 ### Upload to CDN
-After all other steps have completed, the bundle build files (`/dist` directory) and public files (`/public` directory) are pushed up to the Searchspring CDN (content delivery network) and the appropriate paths are invalidated (to clear the edge caching).
+After all other steps have completed, the bundle build files (`/dist` directory) and public files (`/public` directory) are pushed up to the Athos CDN (content delivery network) and the appropriate paths are invalidated (to clear the edge caching).
 
 ## Bundle Files
 In the URL examples below, replace `[your_site_id]` with the valid six-digit alphanumeric site id for your site.
 
 ### Production Bundle
 The production bundle should be used on live site implementations, it is uploaded to this URL:  
-`https://snapui.searchspring.io/[your_site_id]/bundle.js`  
+`https://snapui.athoscommerce.io/[your_site_id]/bundle.js`  
 
 ### Branch Bundles
 All other branch bundles are uploaded to the CDN at this URL (replace `[branch_name]` with the name of the git branch):  
-`https://snapui.searchspring.io/[your_site_id]/[branch_name]/bundle.js`  
+`https://snapui.athoscommerce.io/[your_site_id]/[branch_name]/bundle.js`  
 
 ## Integration
-The bundle file is typically placed in a global header file on the site inside of the `<head>` tag. The sooner that the bundle file is loaded - the sooner that Searchspring results will render on the page.
+The bundle file is typically placed in a global header file on the site inside of the `<head>` tag. The sooner that the bundle file is loaded - the sooner that Athos results will render on the page.
 ```html
-<script src="https://snapui.searchspring.io/[your_site_id]/bundle.js"></script>
+<script src="https://snapui.athoscommerce.io/[your_site_id]/bundle.js"></script>
 ```
 
 ## Branch Overrides
@@ -131,5 +129,5 @@ Webpack is configured by default to split the code into "chunks" when dynamic im
 Development mode provides additional logging and prevents the caching of API responses. When developing locally, this will be automatically set. To set this mode on a live site, add a `dev` query parameter: `https://www.sellingthings.com?dev`. This will set a cookie that keeps the site in development mode. To remove development mode, set the query parameter equal to `0` or `false`: `https://www.sellingthings.com?dev=false`.
 
 ## Step by Step Examples
-Generic code change: https://github.com/searchspring-implementations/.github/blob/production/CHANGES.md  
-Rollback a published change on `production` by reverting a tag: https://github.com/searchspring-implementations/.github/blob/production/REVERT.md
+Generic code change: https://github.com/snap-implementations/.github/blob/production/CHANGES.md  
+Rollback a published change on `production` by reverting a tag: https://github.com/snap-implementations/.github/blob/production/REVERT.md
